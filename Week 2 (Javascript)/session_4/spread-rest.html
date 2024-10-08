@@ -1,0 +1,29 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title> Spread and Rest Example</title>
+</head>
+
+<body>
+    <h2> Spread and Rest Example</h2>
+    <script>
+        let arr = [23, 45, 67, 89];
+        let newArr = [...arr, 99, 100];// 23 45 67 89 99 100 
+        console.log(newArr)
+        let obj = { name: "anuj", age: 23 }
+        let newObj = { ...obj, name: "sumit", city: "noida" }
+        console.log(newObj)
+        //rest parameter 
+          function myAdd(...args){
+              let sum=0;
+              args.forEach(val=> sum+=val);
+              return sum;
+          }
+          console.log(myAdd(2,3))
+          console.log(myAdd(2,3,4))
+          console.log(myAdd(2,3,5,6))
+    </script>
+</body>
+
+</html>

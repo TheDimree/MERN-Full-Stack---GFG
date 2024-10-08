@@ -1,0 +1,28 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title> Closure Example</title>
+</head>
+
+<body>
+    <h2> Closure Example</h2>
+    <script>
+        function Outer() {
+            count = 0;
+            console.log(count);
+            console.log("-----")
+            function Inner() {
+                count++;
+                return count;
+            }
+            return Inner;
+        }
+        let counter=Outer();
+        console.log(counter());//1
+        console.log(counter());//2
+        console.log(counter());//3
+    </script>
+</body>
+
+</html>

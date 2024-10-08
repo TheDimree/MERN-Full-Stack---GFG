@@ -1,0 +1,178 @@
+--> Javascript : It is an open-source , cross platform programming language which is used to apply dynamic content in our web page like some animations , event handling , validations , dom etc.
+ -> before node js Javascript is client and executed only in the browser.
+ -> But when node is introduced we can use it outside the browser (server side)
+ -> Javascript work on ECMAScript standard (ES).
+ -> Old Javascript (Vanilla Javascript)
+ -> New Features (Es 6)
+ -> extension of Javascript is .js 
+ -> It is a case sensitive language 
+ -> Javascript code is write on script tag 
+   -> internal 
+      home.html 
+      <html>
+        <head></head>
+        <body>
+          <script>
+            js code 
+          </script>
+        </body>
+     </html>
+    -> external 
+       script.js 
+        Javascript code 
+       home.html 
+      <html>
+        <head></head>
+        <body>
+          <script src="./script.js">
+          </script>
+        </body>
+     </html>
+
+     -> document.write("--");// print in browser 
+     -> console.log("--");//display in console (debug)//all errors are display in the console 
+
+     -> comments : to describe the code 
+        -> single line : // 
+        -> multiple line : /*  */ 
+    -> variables : temporary memory location which hold input data 
+       -> In vanilla Javascript 
+           var varname =value;
+             var : variant (any type)
+             -> varname some rules to define 
+                -> start with [a-zA-Z $ _]
+                -> combination of [a-zA-Z0-9_]
+            eg:
+              var empName="sumit";
+              var emp_name="anuj";
+        -> In es 6 Javascript introduced let and const 
+          -> let : to define block scope variable(local variable). available within a block only 
+            {
+                 let a=10;
+            }
+            console.log(a);//a is not defined 
+            let x=10;
+            let x=20;// cant be reassign
+             x=20;
+        -> const : to define constant (fixed and permanent)
+           const API_URL="http://www.abc.com/xyz";
+
+        -> Datatype : allocate at runtime as per the variable value.
+           -> number , string , boolean , array , object , null , undefined , symbol 
+             -> typeof : with the help of it we can check datatype of a variable 
+        -> Operators 
+           Arthematic : + , - , / ,* , % , ++ , -- 
+           Assignment : = , += ,..
+           Relational : > , < , >= , <= 
+           Logical : && , || , ! 
+           Comparision 
+              == : only check the value 
+              != 
+              === : check both value and datatype 
+              !== 
+              eg:
+                 let a=10;
+                 let b="10";
+                 if(a==b) (true)
+                 if(a===b) (false)
+          -> Pop Up 
+            alert() : display dialogue box with message.
+              alert("message")
+            confirm(): confirmation box with message 
+              if(confirm("Do u want to delete post?)){
+                 //ok
+              }
+              else{
+                //cancel
+              }
+            prompt() : to input data at runtime 
+              -> prompt accept values in the form of string 
+                -> convert string into number 
+                  parseInt()
+        -> Conditions 
+           if else 
+           if else if else 
+           nested if 
+           switch case : multi decision making 
+             switch(expression){
+                case val : statement 
+                   break 
+                ---
+                default : statement
+             }
+              
+        -> Looping : Iteration 
+           for : 
+              for(let i=1; i<=5; i++){
+                  console.log(i)
+              }
+           while 
+             i=1;
+             while(i<=5){
+               console.log(i);
+               i++;
+             }
+           do-while :execute at least once 
+              do{
+                statement
+              }while(condition)
+        -> Array : array is an group of elements having different type 
+           -> syntax:
+              let arrayname=[val,val,val];
+                eg:
+              let arr=[23,4,5,67];
+              -> To find the length of an array 
+                arrayname.length 
+            -> forEach() loop : used only for an array . the loop is going on untill it find null 
+              syntax :
+               arrname.forEach(function(val,ind){
+                    //val ,ind 
+               })
+                 
+        -> Functions : used for reusability 
+            -> normal way 
+               function add(a,b) //para 
+               {
+                return (a+b);
+               }
+               console.log(add(2,3));//arguments 
+            -> expression 
+            let add=function(a,b){
+               return (a+b);
+            }
+            -> in es6 arrow functions (=>) :the code is sort and concise 
+               -> single line 
+                let add=(a,b)=> (a+b);
+                -> multiple line 
+                let result=(para)=>{
+                    //calculate 
+                    return data;
+                }
+    -> Events handing : are used to perform a task 
+       Events           Event handler 
+       click              onclick 
+       dblclick 
+       mouseover
+       mouseout
+       keyup
+       keydown
+       keypress
+       blur 
+       focus 
+       change
+       load 
+       reload 
+       submit 
+       scroll
+
+    -> document.bgColor="colorname" // change bgcolor of the document
+
+    -> Hoisting : It is a in-built mechanism of Javascript , the variables and functions are move at the top of the program before code execution. It is apply in old Javascript features.
+
+    --> DOM : stand for document object model. It is a tree like structure where every html element is represnted as a node. When a page is load then a document object is created with the help of it we can manupulate any html elements of our web page (add , edit , delete etc)
+       -> document.getElementById() : to get element by id 
+       -> document.querySelector() : we acces any element by className
+         -> innerHTML :to get or set html content 
+         -> textContent : to get or set text content 
+       -> createElement 
+       -> 

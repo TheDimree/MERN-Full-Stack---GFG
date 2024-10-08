@@ -1,0 +1,32 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title> Callback Example</title>
+</head>
+
+<body>
+    <h2> Callback Example</h2>
+    <script>
+        function getUser(uid,callback){
+            console.log("Fetch user details from database");
+            setTimeout(()=>{
+                callback({name:"john",id:uid});
+            },2000);
+        }
+        function getServices(user,callback){
+            console.log(`fetch services of the ${user.name}`);
+            setTimeout(()=>{
+               callback(["A","B","C","D"])
+            },4000)
+        }
+        //nested callback
+         getUser(101,(user)=>{
+            getServices(user,(services)=>{
+                console.log(services);
+            })
+         })
+    </script>
+</body>
+
+</html>

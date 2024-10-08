@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Tags</title>
+    <meta name = "author" content="HTML&CSS">
+    <meta name = "description" content="This is a description">
+    <meta name = "keywords" content= "Movies,top 50 movies,gfg">
+    <title>Basic Tags</title>
+    <style>
+       *{
+            margin: 3px 5px;
+        }
+        h1 {
+            color:white;
+            background-color: red;
+            text-align: center;
+        }
+
+        table tr:nth-child(2n+2){
+            background-color: beige;
+        }
+        th{color: aqua;border: 1pxsolid blue;font-size: 20px;}
+
+
+    </style>
+</head>
+<body>
+    <h1 style="background-color: red; color: white; text-align: center;">Headings & Paragraph</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+
+    <p style="color: antiquewhite">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem autem iusto reprehenderit, optio eum temporibus modi delectus amet molestiae quos, mollitia possimus laboriosam aliquam accusantium natus cumque voluptates tempore recusandae doloremque quas alias maiores. Illo asperiores consequuntur accusamus <span style="color:blue">Span is inline element</span> hic alias, quos dolores magni accusantium vel doloremque quod porro tempore eos facere!</p>
+
+    <h1 id="listing" style="background-color: red; color: white; text-align: center;">Listing</h1>
+    <h3>Ordered List</h3>
+    <ol>
+        <li>Bhagesh</li>
+        <li>Arvind</li>
+        <li>Sunny</li>
+        <li>Shivam</li>
+        <li>Devesh</li>
+    </ol>
+    
+    <ol type="i">
+        <li>Bhagesh</li>
+        <li>Arvind</li>
+        <li>Sunny</li>
+        <li>Shivam</li>
+        <li>Devesh</li>
+    </ol>
+
+    <h3>Unordered List</h3>
+    <ul type="circle"></ul>
+        <li> list 1</li>
+        <li> list 2</li>
+        <li> list 3</li>
+    </ol>
+
+    <h1 style="background-color: red; color: white; text-align: center;">Other tags</h1>
+
+    <p>This is a <strong>pg</strong> in <b>bold</b>.</p>
+
+    <p>This is a <em>pg</em> in <i>italics</i>.</p>
+
+    <p>This is <u>underlined</u>.</p>
+
+    <p>This is <s>pg</s> has <del>strikethrough</del> text.</p>
+
+    <p>2<sup>2</sup> equals to 4</p>
+
+    <p>O<sub>3</sub> refers to third member of sequence O .</p>
+
+    <p>This <small>pg</small> has small text .</p>
+
+    <p>This <big>pg</big> has big text .</p>
+
+    <p>This <mark>pg</mark> has highlighted text .</p>
+
+    <h1 style="color:white; background-color: red; text-align: center;">Multimedia tags</h1>
+
+    <h3>Image</h3>
+    <img src="../session_1/images/1.jfif" alt="checking image" width="400px" height="400px">
+
+    <h3>Video</h3>
+    <video width="200px" height="200px" autoplay loop poster="./image.png">
+        <source src="./Woman-riding-a-horse-in-the-street-1283899.mov" type="video/mov">
+        Your browser does not support this video
+    </video>
+
+    <h3>Audio</h3>
+    <audio controls>
+        <source src="./MA_DaniilDavydov_NeonAeon_Main.wav">
+    </audio>
+
+    <h3>Object: Used to embed external resource, pdf, audio and anything</h3>
+    <object data="./QUEUE.pdf" type="application/pdf" width="200px" height="200px">
+        <!-- fallback content -->
+    </object>
+
+    <h3>Embedded Tag: iFrame</h3>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/5i8ej1-GpFU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <h1 style="color:white; background-color: red;">Hyperlink</h1>
+    <a href="https://www.geeksforgeeks.org/" target="_top">Home</a>
+
+    <div>
+        <a href="#section1">Go to section1</a> <br />
+        <a href="#section2">Go to section2</a> <br />
+        <a href="#listing">Go to Listing</a>
+    </div>
+
+    <div>
+        <h1 id="section1">section1</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit ducimus ullam laudantium neque cupiditate? Itaque accusamus, placeat, porro mollitia expedita tempora necessitatibus dolores libero eligendi distinctio eum cupiditate delectus in quidem eaque esse. Quaerat praesentium, alias fugiat consequatur odio aliquam incidunt possimus non sequi quia aut ratione. Labore, odit quod.</p>
+    </div>
+
+    <div>
+        <h1 id="section2">section2</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit ducimus ullam laudantium neque cupiditate? Itaque accusamus, placeat, porro mollitia expedita tempora necessitatibus dolores libero eligendi distinctio eum cupiditate delectus in quidem eaque esse. Quaerat praesentium, alias fugiat consequatur odio aliquam incidunt possimus non sequi quia aut ratione. Labore, odit quod.</p>
+    </div>
+
+    <h1>Containers</h1>
+    <h3>Block-Level</h3>
+    <p> div, section, header, footer, nav, article, and aside</p>
+    <h3>Inline Containers</h3>
+    <p> span, button, em, strong, a and label</p>
+    <h3>Generic Containers</h3>
+    <p> span, div</p>
+
+    <h1>Table</h1>
+    <table style="width: 100%;">
+        <thead>Tables</thead>
+        <tbody>
+            <tr>
+                <th>First Name</th> 
+                <th>Last Name</th>
+            </tr>
+            <tr>
+                <td>Avneet</td>
+                <td>Kaur</td>
+            </tr>
+            <tr>
+                <td>Avneet</td>
+                <td>Kaur</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+            <td colspan="2">footer</td></tr>
+        </tfoot>
+        <caption>My Table</caption>
+    </table>
+
+</body>
+</html>

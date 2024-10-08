@@ -1,0 +1,45 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title> promise Example</title>
+</head>
+
+<body>
+    <h2> promise Example</h2>
+    <script>
+        function getUser(uid){
+              return new Promise((resolve,reject)=>{
+                console.log("Fetch user details from database");
+            setTimeout(()=>{
+                resolve({name:"john",id:uid});
+            },2000);
+              })
+        }
+        function getServices(user){
+            return new Promise((resolve,reject)=>{
+                console.log(`fetch services of the ${user.name}`);
+            setTimeout(()=>{
+                resolve(["A","B","C","D"])
+            },4000)
+            })
+        }
+        // getUser(101)
+        // .then(user=> getServices(user))
+        // .then(services=> console.log(services))
+        // .catch(err=> console.log(err))
+        async function getWholeDetails(){
+            try{
+                let user=await getUser(101);
+                let services=await getServices(user);
+                console.log(services)
+            }
+            catch(err){
+               console.log(err)
+            }
+        }
+        getWholeDetails();
+    </script>
+</body>
+
+</html>

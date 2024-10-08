@@ -1,0 +1,104 @@
+-> Closure : It is a function that has access to its outer scope or lexical environment , even after the outer function has finished executing.This is possible because closers are created when a function is created .
+   -> Lexical scoping : a variable scope based on its posidtion in the source code.
+      inner function has access the properties of parent and its own.
+      syntax :
+        function Outer(){
+            count=0;
+            function Inner(){
+               count++;
+               return count;
+            } 
+            return Inner;
+        }
+    -> in es6 template literal concepts : within backtick (``)  we can render string as well as the variable 
+      eg:
+        let name="sumit";
+        console.log(`The name is ${name}`)
+
+    -> Destructuring : we can Destructur array elements or object properties in a normal variables.
+       -> array 
+          let arr=["sumit","amit","anil"];
+          let [x,y,z]=arr;
+       -> object 
+          let obj={fname:"abc",lname:"singh",city:"noida",age:34};
+          let {fname,age}=obj;
+    -> Array methods 
+        map() , filter() , reduce()
+
+    -> Object : are used to store data (method or properties) in key value pair . Object keys are not in quotes.
+       eg:
+          let obj={
+              fname:"anuj",
+              lname:"singh",
+            fullName:function(){
+                return fname+" "+lname
+            }
+          }
+          console.log(obj.fname);
+          console.log(obj.fullName());
+
+    -> spread operator and rest parameter
+       -> spread operator (...) :-  used to copy or spread array elements and object properties in new array and object.
+          eg:
+             let arr=[23,45,67,89];
+             let newArr=[...arr,99,100];// 23 45 67 89 99 100 
+             let obj={name:"anuj",age:23}
+             let newObj={ ...obj , name:"sumit",city:"noida"}
+                {name:"sumit",age:23,city:"noida"}
+
+       -> rest parameter (...) :- we can pass any number of arguments in the function. Limitation is that rest parameter is the last formal parameter of the function.
+           function myAdd(...args){
+              let sum=0;
+              args.forEach(val=> sum+=val);
+              return sum;
+          }
+          console.log(myAdd(2,3))
+          console.log(myAdd(2,3,4))
+          console.log(myAdd(2,3,5,6))
+
+    -> Callback | promises | async-await 
+       -> Callback :- a function passed as an argument in another function it is known as callback.It call at the end when function is executed. We use callbacks for to perform asynchronous operations.
+          eg:
+             function  details(name,callback)
+               {
+                   callback(name)
+               }
+               function mycallback(name){
+                   console.log(`The name is ${name}`)
+               }
+               details("anuj singh",mycallback);
+            -> when we have a nested level of callback hell, then it hardly to manage errors and that problem is known as callback hell or pyramid of dooms.
+            -> To solve this issue javascript introduced promises in es6.
+    -> Promise : are used to handle asynchronous operations in more manageble way.
+       -> 3 state 
+          -> pending 
+          -> resolved 
+          -> reject 
+          When we call a promise it goes to pending state , then when a asynchronous operations is completed it goes to resolved otherwise reject.
+          *** promise return one value at a time (resolve or reject)
+            -> promise is not cancellable 
+              -> to define a promise 
+                let promise=new Promise((resolve, reject)=>{
+                    if(condition){
+                        resolve("data")
+                    }
+                    else{
+                        reject("data")
+                    }
+                })
+                to consume a promise 
+                  .then() : resolve 
+                  .catch() : reject
+        -> fetch API(inbuild method) : it return promise and used to consume backend services or APIs.
+          fetch(API)
+          .then(res => res.json())
+          .then(data=> console.log(data))
+          .catch(err=> console.log(err))
+        -> fake api url 
+        https://jsonplaceholder.typicode.com/
+
+        -> in es7 javascript introduced async-await over promise
+          using async await the code is more readable and clear . It look like synchronous but it is asynchronous.
+            -> async : if we put async before any function then it return promise
+            -> await : is used only with async functions and it wait for the promise to settle.
+           

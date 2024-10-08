@@ -1,0 +1,28 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title> Promise Example</title>
+</head>
+
+<body>
+    <h2> Promise Example</h2>
+    <script>
+      let promise=new Promise((resolve,reject)=>{
+         let age=22;
+         setTimeout(()=>{
+           if(age>=25){
+            resolve("Elligible")
+           }
+           else{
+             reject("Not Elligible")
+           }
+         },2000)
+      })
+      promise
+      .then(res=> console.log(res))
+      .catch(err=> console.log(err))
+    </script>
+</body>
+
+</html>

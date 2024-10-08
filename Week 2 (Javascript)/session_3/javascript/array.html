@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Array</title>
+    </head>
+    <body>
+        <h2> Array Example</h2>
+        <script>
+            let arr=[23,45,6,78,99];
+            let sum=0;
+            let lar=0;
+            // for(let i=0; i<arr.length; i++){
+            //     console.log(arr[i]);
+            //     sum+=arr[i];
+            //     if(lar<arr[i]){
+            //         lar=arr[i];
+            //     }
+            // }
+            arr.forEach((val)=>{
+                console.log(val);
+                sum+=val;
+                if(lar < val){
+                    lar=val;
+                }
+            })
+            console.log("The sum is "+sum+ " and largest is  "+lar);
+
+            let add=(a,b)=> (a+b);
+            console.log(add(3,4));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title> fetch API Example</title>
+</head>
+
+<body>
+    <h2> Fetch API Example</h2>
+    <button id="btn"> Fetch Posts From JsonPlaceholder</button>
+    <div id="target"></div>
+    <script>
+        let btn=document.getElementById("btn");
+        let target=document.getElementById("target");
+        btn.addEventListener("click",()=>{
+           const API="https://jsonplaceholder.typicode.com/posts";
+           fetch(API)
+           .then(res => res.json())
+           .then(data=>{
+               let str='';
+               data.forEach(post=>{
+                  str+=` <div>
+                        <h2> ${post.title} </h2>
+                        <p> ${post.body} </p>
+                        <hr/>
+                    </div>`
+               })
+               target.innerHTML=str;
+           })
+           .catch(err=> console.log(err))
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title> Callback Example</title>
+</head>
+
+<body>
+    <h2> Callback Example</h2>
+    <script>
+       function  details(name,callback)
+               {
+                   callback(name)
+               }
+               function mycallback(name){
+                   console.log(`The name is ${name}`)
+               }
+               details("anuj singh",mycallback);
+    </script>
+</body>
+
+</html>

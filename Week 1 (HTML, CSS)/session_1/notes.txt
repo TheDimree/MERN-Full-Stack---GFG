@@ -1,0 +1,103 @@
+--> Software 
+   1. Visual Studio code (download and install)
+     https://code.visualstudio.com/download
+   2. download and install node js 
+     https://nodejs.org/en/download/package-manager 
+
+  -> Fullstack 
+  FrontEnd + backend + database + deployment = Fullstack 
+    -> FrontEnd (UI)
+       -> Html 5
+       -> Css 3 
+       -> JavaScript 
+       -> Bootstrap | tailwind css 
+       -> React | Angular | Vue Js
+    -> Backend 
+       Node Js | Express Js 
+    -> Database 
+        MongoDB 
+    ->  Deployment (cloud platform : Aws , Azure etc)
+    -> Html : is used to create web layouts(structure of our application). 
+       -> extension is .html 
+       -> It is not a case sensitive 
+         <html>   </Html>
+       -> latest is html 5 
+       -> In html all tags are predefined 
+       -> Everthing is write tags 
+       -> tag < >
+       -> Every tag must be close 
+         <br >     <br />
+       -> Basic structure of html 5 (basic template)
+       <!Doctype html> 
+       <html>
+          <head>
+            //head section : we define title , meta tags , styles , scripts
+          </head>
+          <body>
+            //body section : we create whole web page 
+          </body>
+       </html>
+    -> install extension in vscode 
+    liveserver : live reload fetaure when there is any change in the code
+    -> Comments : to describe the the code (the code is not executed)
+      <!--  -->
+    -> insert image 
+       <img src="path" alt="description"/> 
+    -> List 
+       -> ordered <ol>
+         1 2 3 (default)
+         a b c 
+         A B C 
+         i ii iii 
+         I II III 
+       -> unordered <ul>
+         disc 
+         circle 
+         square 
+         -> to add item in list we have <li>
+    -> ** hyperlink : is used to navigate one page into another 
+       <a> (anchor tag)
+         -> attributes 
+            -> href="path"
+            -> target="new"
+            eg:
+              <a href="first.html"> Click here </a>
+    -> forms : collection of fields like text , radio , check box etc 
+    <form> tag 
+       <input type="text" required maxlength="50" />
+         -> Want to put some regular expression (pattern)
+        Name : i want alphabates [a-zA-Z] space size anything
+            [a-zA-Z ]+
+
+            []: define pattern 
+            {} : range 
+            eg:
+            [6-9][0-9]{9}
+
+        [a-zA-Z ]+
+    -> Types of elements 
+       -> Block : start with new line . It take a entire row 
+          h1 , p , div etc
+       -> Inline : in one line 
+         span ,label , img , a etc 
+
+         Name : <input type="text" /> <span style=""> Message </span> 
+    -> In old techinique 
+       -> frameset 
+       -> tables 
+       -> div :
+          <div> </div>
+       -> semantic tags : it is eaiser to understand and tags have some meaining.
+          <main> </main>
+          header 
+          nav 
+          footer 
+          section 
+          aside 
+          figure 
+
+          <div>
+             <div> header </div>
+             <div> Nav </div>
+          </div>
+    

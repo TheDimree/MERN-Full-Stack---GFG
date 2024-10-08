@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Form Example</title>
+    </head>
+    <body>
+        <h2> Form Example</h2>
+        <form>
+            <!-- input field -->
+        Name : <input type="text" placeholder="Enter Name " required pattern="[a-zA-Z ]+"/> <br/>
+        <!-- password fiels-->
+        Password : <input type="password" placeholder="Enter password" required/> <br/>
+        <!-- email field-->
+        Email : <input type="email" required/> <br/>
+        <!-- number field--> 
+        Mobile : <input type="text" required pattern="[6-9][0-9]{9}"/><br/>
+        <!-- radio button (only 1 select at a time , all button name are same , value diff) -->
+        Gender : <input type="radio" name="gen" value="male" /> Male 
+                 <input type="radio" name="gen" value="female" /> Female <br/>
+        <!-- checkbox - multiple select-->
+        Hobbies : <input type="checkbox" name="c1" value="tt" /> TT 
+        <input type="checkbox" name="c1" value="cricket" /> Cricket 
+        <input type="checkbox" name="c1" value="football" /> Football <br/>
+        <!-- select menu-->
+         City : <select >
+                    <option> Select</option>
+                    <option> Delhi</option>
+                    <option> Noida</option>
+                    <option> Guguram</option>
+                </select> <br/>
+        <!-- file field (attachment)-->
+        Upload : <input type="file" /> <br/>
+        <!-- date field-->
+         Dob : <input type="date" required/> <br/>
+        <!-- color field-->
+        Choose : <input type="color" required/> <br/>
+        <!-- url field-->
+        Website : <input type="url" required/> <br/>
+        <!-- textarea -->
+        feedback : <textarea></textarea> <br/>
+        <input type="submit" value="submit" /> 
+        <input type="reset" value="Reset"/>
+        <input type="button" value="Add"/>
+        </form>
+    </body>
+</html>

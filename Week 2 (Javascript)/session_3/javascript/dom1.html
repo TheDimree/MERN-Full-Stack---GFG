@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Dom</title>
+    </head>
+    <body>
+        <h2> Dom Example</h2>
+        <p id="target"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos reiciendis laboriosam suscipit dicta corrupti omnis sequi. <b> My Bold tag</b>Cum reprehenderit, animi sed fuga sint earum tempora, nisi autem eos enim soluta sequi.</p>
+        <button onclick="getData()"> Get data</button>
+        <script>
+           function getData(){
+              //get para 
+              let para=document.getElementById("target");
+              //get data from para 
+              let data=para.innerHTML;
+              alert(data)
+              //update para data 
+              para.innerHTML="Hello data is updated";
+              //apply styles 
+              para.style.color="red";
+           }
+        </script>
+    </body>
+</html>

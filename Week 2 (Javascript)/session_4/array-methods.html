@@ -1,0 +1,44 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title> Array methods Example</title>
+</head>
+
+<body>
+    <h2> Array methods Example</h2>
+    <script>
+        let arr=[23,45,67,89];
+        console.log(arr);
+        arr.push(56,78);
+        console.log(arr);
+        arr.pop()
+        console.log(arr);
+        arr.unshift(11,22);//add elements at the start
+        console.log(arr);
+        arr.shift();//remove first element
+        console.log(arr);
+        //map : return an array and have same number of elements as a applied array and we can change the values of the elements as per the requirement
+         let data=[23,45,67,89];
+         let newData=data.map(val=> val*2);
+         console.log(newData)
+         //filter : return array as per the condition
+         let empData=[
+            {id:1,name:'a',age:23,city:"noida"},
+            {id:2,name:'b',age:33,city:"delhi"},
+            {id:3,name:'c',age:22,city:"gurugram"},
+            {id:4,name:'d',age:29,city:"jaipur"}
+         ]
+         let filterEmp=empData.filter(emp=> emp.age>25).map(data=> data.name);
+         console.log(filterEmp)
+         //reduce : return a single value 
+         let arraydata=[2,3,4,5,6];
+         let result=arraydata.reduce((a,b)=>{
+            //console.log(`${a}----${b}`)
+              return (a+b)
+         },0);
+         console.log(result)
+    </script>
+</body>
+
+</html>

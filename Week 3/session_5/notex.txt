@@ -1,0 +1,74 @@
+-> React Js : It is an open-source , cross-platform Javascript library which is used to develop UI(user interface) (front-end)
+  -> It is known as a view layer 
+  -> It is maintained by facebook 
+  -> With the help of it we can create SPA (Single Page Application)
+
+  ---> Features of React Js 
+    1. Component based architecture : reusability.We can divide our UI into seperate peices of code.Every thing in react is all about component.
+    2. Support JSX (Javascript XML) : It allows html within Javascript .Browser doesn't understand JSX , thats why react have a babel transpiler which transpile jsx code into js 
+    3. Virtual DOM : It is a virtual representation of DOM. When a page is executed , the Vdom take a copy of actual DOM . Next time if there is any update in the real dom , then it compare with the copy , and only the new things are updated in a react dome. That's why the performance is fast.
+
+ --> Environmental Setup (installation)
+     -> Node js environment 
+         -> Download and install node js 
+           https://nodejs.org/en/download/package-manager 
+         -> to check open cmd/terminal 
+            node -v 
+         -> *** when node is install , it also install npm (node package manager)
+        -> How we create react app 
+           -> 1st way (npx)
+              npx create-react-app appname 
+           -> 2nd way (vite)
+           https://vitejs.dev/guide/
+             npm create vite@latest proname 
+    ->to run react application , open app folder in cmd / terminal 
+      npm start (3000)
+    
+    -> Folder or directory structure 
+       -> node_modules : here all node related modules are stored and they are used to develop the react application (3rd party module)
+       -> public : we store assets file like js/icons etc 
+          index.html : it is a main html file which execute when react app is server 
+       -> src : it is a main foler of application where we can create components , services etc 
+           index.js : it is main Javascript entry pint file 
+           App.js : default component 
+           App.css : css file of App Component 
+           index.css : main css file of application
+           App.test.js : testing file of app component
+      -> .gitignore 
+      -> package.json : all node_modules dependencies are define here and also the run comments 
+      -> package-lock.json : dependencies with their version 
+      -> README.md : details and instructions of the project 
+
+    -> How react application is boot or execute 
+
+  index.html 
+  <div id="root"></div> ---> src/index.js -> get the id root from index.html and render App component in the div id root 
+
+  -> How we use styles in react 
+     -> Inline style 
+        <p style={ {color:red}}> Hii </p>
+     -> call class 
+        <p className="xyz"> --- </p>
+
+  -> JSX : expression {} 
+     -> used to render dynamic data 
+       eg:
+       let title="Geek for Geek";
+
+       <h2> {title} </h2>
+
+     -> Render array or object 
+        we have map() method of Javascript 
+        eg:
+         const courses=["A","B","C","D","E"];
+         <ul>
+           {courses.map((val,index)=> 
+             <li key={index}> {val} </li>
+          )}
+       </ul>
+
+       --> Tailwind CSS : It is a css framework. In framework we have some inbuild classes , with the help of it we can create our design very easily and fast.
+          -> How we intergate tailwind css in react app 
+          https://tailwindcss.com/docs/guides/create-react-app
+            npm install --save tailwindcss 
+            npx tailwindcss init (create configuration file of tcss)

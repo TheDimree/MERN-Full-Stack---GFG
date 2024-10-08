@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+
+    <style>
+        *{ margin:0; }
+
+        li {list-style-type: none;}
+
+
+    </style>
+</head>
+<body>
+<main>
+    <header>
+        <h1>Input Tags in Form</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li> <a href="#"> Home </a></li>
+            <li> <a href="#"> About </a></li>
+            <li> <a href="#"> Service </a></li>
+            <li> <a href="#"> Gallery </a></li>
+            <li> <a href="#"> Contact </a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <form>
+            <h3>Input type: text</h3>
+            <input type="text" name="fname" id="fname">
+            <br><br>
+            <!-- -->
+           
+            <h3>Input type: password</h3>
+            <input type="password" name="userpassword">
+
+            <h3>Input type: submit</h3>
+            <input type="submit" value="SignUp">
+            
+            <h3>Input type: reset</h3>
+            <input type="reset" value="reset data">
+            <br><br>
+
+            <h3>Input type: radio</h3>
+            <input type="radio" name="gender" value="Male">
+            <label>Male</label>
+            &nbsp; &nbsp; &nbsp; &nbsp;
+            <input type="radio" name="gender" value="Female">
+            <label>Female</label>
+            <br><br> 
+
+            <h3>Input type: checkbox</h3>
+            <input type="checkbox" name="hobby1" value="Reading">
+            <label>Reading</label><br>
+            <input type="checkbox" name="hobby2" value="Weading">
+            <label>Writing</label><br>
+            <br><br>
+
+            <h3>Input type: button</h3>
+            <input type="button" value="Click Me" onclick="alert(2+2)">
+            <br><br>
+            
+            <h3>Input type: colorpicker</h3>
+            <input type="color" name="bgcolor" value="#ffffff">
+            <br><br>
+
+            <h3>Input type: date</h3>
+            <input type="date" name="dob" max="2023-11-30" min="2023-10-30" value="2023-11-01">
+            <br><br>
+
+            <input type="file" name="myfile" accept=".pdf,.jpg">
+            <br><br>
+            
+            <h3>Input type: number</h3>
+
+            <input type="number" value="10" min="4" max="20" step="3" />
+            <br><br>
+            <input type="range" min="0" max="120" value="20" step="1"/>
+        </form>
+    </section>
+    
+    <footer>
+        <p> Copyright &copy; 2024. All right reserved.</p>
+    </footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Create Element</title>
+    </head>
+    <body>
+        <h2> Create Element Example</h2>
+        <ul id="menu"></ul>
+        <button id="btn"> Click Here</button>
+        <script>
+            let menu=document.getElementById("menu");
+            let btn=document.getElementById("btn");
+            //add click event in btn 
+            btn.addEventListener("click",()=>{
+                let arr=["mens","womens","kids"];
+                arr.forEach(val=>{
+                    let listItem=document.createElement("li");
+                    listItem.textContent=val;
+                    menu.appendChild(listItem);
+                })
+            })
+        </script>
+    </body>
+</html>

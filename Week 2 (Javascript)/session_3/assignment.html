@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var a = parseInt(prompt("Enter 1st no"))
+        var b = parseInt(prompt("Enter 2nd no"))
+        var c = parseInt(prompt("Enter 3rd no"))
+        var d = parseInt(prompt("Enter 4th no"))
+        var e = parseInt(prompt("Enter 5th no"))
+        var sum = a + b + c + d + e;
+        var percent = (sum/5)
+        console.log("Total marks:"+ sum)
+        console.log("Percentage:"+ percent)
+        
+        if(percent>90 && percent<=100) {
+            console.log("Grade: A")
+        }
+        if(percent>80 && percent<=90) {
+            console.log("Grade: B")
+        }
+        if(percent>70 && percent<=80) {
+            console.log("Grade: C")
+        }
+        if(percent>60 && percent<=70) {
+            console.log("Grade: D")
+        }
+        if(percent>35 && percent<=60) {
+            console.log("Pass")
+        }
+
+        if(percent>0 && percent<=34) {
+            console.log("Fail")
+        }
+    
+    </script>
+</body>
+
+</html>

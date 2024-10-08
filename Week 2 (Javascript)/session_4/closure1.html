@@ -1,0 +1,30 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title> Closure Example</title>
+</head>
+
+<body>
+    <h2> Closure Example</h2>
+    <script>
+        function pizza(topping){
+           let slice=10;
+           function eat(name){
+              slice--;
+              console.log(`I just ate a pieces of pizza ${name} with topping ${topping} ,${slice} remaining`)
+           }
+           function description(){
+             console.log(`Remaining pizza slices = ${slice}`)
+           }
+           return {eat , description}
+        }
+        let pop=pizza('cheese');
+        pop.description();
+        pop.eat("abc");
+        pop.eat("xyz");
+        pop.eat("aaa");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>Object Example</title>
+</head>
+
+<body>
+    <h2> Object Example</h2>
+    <script>
+       let obj={
+              fname:"anuj",
+              lname:"singh",
+            fullName:function(){
+                return this.fname+" "+this.lname
+            }
+          }
+          console.log(obj.fname);//anuj
+          console.log(obj.fullName());//anuj singh
+          //add properties 
+          obj.age=34;
+          console.log(obj)
+          //delete 
+          delete obj.fullName;
+          console.log(obj)
+    </script>
+</body>
+
+</html>
