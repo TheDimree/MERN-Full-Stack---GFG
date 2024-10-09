@@ -1,0 +1,48 @@
+-> React Routing : It is a process to navigate one route to another route within a single page.With the help of routing we can create SPA (single page application)
+  -> we have React Router Module for routing and it is 3rd party 
+     npm i react-router-dom --save 
+      -> React Router components 
+          BrowserRouter : parent component  and call at top level.
+          Routes : container to define route 
+          Route : to define path and load dynamic components 
+          Link : Hyperlink 
+          Outlet : to load child or nested component 
+          ->
+             <BrowserRouter>
+                 <Link to="/"> Home </Link>
+                 <Link to="/about"> About Us </Link>
+                 <section>
+                     <Routes>
+                        <Route path="" element={ <Home />}/>
+                         <Route path="about" element={ <About />}/>
+                     </Routes>
+                 </section>
+             </BrowserRouter>
+        Task :
+        Home  About Us  Services Gallery Contact Us 
+        <section>
+          //load dynamic routes 
+        </section>
+        ->extension : ES7+ React/Redux/React-Native 
+        rafce : arrow function component
+        -> components 
+          home 
+          about 
+          services 
+          gallery 
+          contact 
+          nav 
+
+        -> Child route or nested route 
+          -> to load we have Outlet Component 
+
+        -> Dynamic routes or params : pass data from url 
+           -> route params 
+              http://localhost:3000/products/mens 
+
+              <Route path="products/:cname" element={<Products />}/>
+              -> How we read route params 
+                 useParams hook in react router dom 
+        -> React Router v6.4 (createBrowserRouter : to define route)
+          -> RouteProvider : to provide routes to the app
+        
