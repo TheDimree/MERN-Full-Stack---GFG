@@ -1,0 +1,55 @@
+-> React Hooks :- Hooks are the functions used for reusability of the functionality.They are introduced in React 16.8 version. Hooks are start with prefix use 
+  -> Inbuild Hooks : useState , useEffect , useRef , useMemo , useCallback , useContext etc
+  -> user defined or custom hook 
+     -> Inbuild Hooks 
+        -> useState : to manage state within component.
+           syntax :
+              const [statename,handler]=useState(initialValue);
+              eg:
+              const [count,setCount]=useState(0);
+                 count : state name 
+                 setCount : handler method to update the state 
+        -> useEffect() : to perform side effects like some APIs call and also used as a life cycle method of the component.
+            -> Mounting Phase (when a component is initilized)
+                useEffect(()=>{
+                   //code 
+                },[])
+            -> Updating Phase (when there is any change in state or prop)
+               useEffect(()=>{
+                   //code 
+                },[state|pro])
+            -> Unmounting Phase (when we leave from the component (cleanup some unwanted data))
+               useEffect(()=>{
+                   
+                   return (){
+                      //cleanup data 
+                   }
+                },[])
+            -> npm i bootstrap --save 
+              -> src/index.js 
+                import "bootstrap/dist/css/bootstrap.min.css";
+                import "bootstrap/dist/js/bootstrap.bundle";
+            -> fetch() API of javascript : to consume API or backend services 
+              -> https://jsonplaceholder.typicode.com/posts 
+    -> Custom Hook :- we can create our own hook for reusability.we can create hook with use prefix.
+       eg:
+         import { useEffect, useState } from "react";
+const useFetchData=(url)=>{
+  const [data,setData]=useState([]);
+  useEffect(()=>{
+     fetch(url)
+     .then(res=> res.json())
+     .then(data=> setData(data))
+     .catch(err=> console.log(err))
+  },[])
+  return data;
+}
+export default useFetchData;
+
+ ---> state management : is a process to pass the data into multiple components 
+    -> local state : useState 
+    -> global state : context API and Redux 
+    -> Context API (useContext): It is a way to put our global state in the main components and that state is available for all child and subchild etc.
+       -> create context 
+       -> Provider 
+       -> Consumer  
