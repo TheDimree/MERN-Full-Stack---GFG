@@ -1,0 +1,57 @@
+-> How we use Bootstrap framework in React 
+    -> https://react-bootstrap.github.io/ (for react) 
+    -> https://getbootstrap.com/docs/5.0/getting-started/introduction/
+       npm i bootstrap --save 
+       -> configure bootstrap in index.js 
+         import "bootstrap/dist/css/bootstrap.min.css";
+         import "bootstrap/dist/js/bootstrap.bundle";
+
+      -> components 
+         NavBar 
+         Home 
+         About Us 
+         Gallery 
+         NotFound 
+      -> Routing 
+         npm i react-router-dom --save 
+
+     -> Http Call or network call (consume API)
+       -> fetch : inbuild method in javascript 
+       -> axios : 3rd party module which is used to consume APIs 
+          npm i axios --save 
+          -> It also return promise 
+          -> How we use axios 
+            import axios from 'axios';
+              axios.get | post | put | delete(path)
+              .then(res=> res.data)
+              .catch(err=> console.log(err))
+      -> 13th OCT 
+        -> High Order Components : They allow us to reuse component logic across multiple components. It is a function that takes a component as an argument and returns new component that wraps the original component.
+          -> Reusability 
+          -> Flexibility 
+             structure of hod 
+               const hoc=({children})=>{
+
+               }
+			   In React, the children keyword is a reserved prop that is automatically passed to components if they are used to wrap other components or JSX elements. It's not something you have to explicitly define — React takes care of it.
+         -> Lazy Loading (on Demand loading) (Code splitting) : by default the application is egarly loaded it means that when a page is load all the components load at once. So if the application size increases then performance of the application is slow.
+           To solve this issue we can use the concept of lazy loading (code-splitting)
+             In that we can load the components only when it required.
+             -> First we set the condition of when to load the components 
+             -> Next we lazily import those components 
+             -> And finally we load the components based on those conditions 
+
+               lazy and suspense components in react 
+         -> Form Handling in React 
+
+         -> Controlled and Uncontrolled Components 
+            -> Controlled component are the components whose state and behaviors are managed by react components using state.
+                -> FormData manage with the help of state (single source of truth). The value of the form element is set and updates through React State.
+            -> Uncontrolled component manage their own state and control the behaviors with the help of DOM.We use useRef hook to manage it.
+              -> useRef() hook : it return a mutable value. It give us current object with the help of it we can manupulate the element 
+                 const inputRef=useRef(null);
+
+                 <input type="text" ref={inputRef} />
+
+                  -> read value 
+                   inputRef.current.value;

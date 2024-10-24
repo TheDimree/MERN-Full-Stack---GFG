@@ -1,0 +1,93 @@
+-> session 11 
+            -> crud application in react with the JSON Server 
+            -> class component features 
+
+      -> Class Component 
+          syntax :
+            import {Component} from 'react';
+            class className extends Component 
+            {
+              //logic part
+               render(){
+                  return(
+                    <>
+                      //html 
+                    </>
+                  )
+               }
+            }
+        -> state in class component 
+           constructor(props){
+              super(props);
+              this.state={count:0}
+            }
+            //get state data 
+            {this.state.count}
+            //update state data 
+              this.setState({count:this.state.count+1})
+          -> Lifecycle methods of React class functions 
+          Every component have their own Lifecycle methods they are called automatically 
+            -> Phases of Lifecycle 
+               -> Mounting Phase (When component is loaded)
+                   componentDidMount(){
+                      //code
+                   }
+               -> Updating Phase (when any update in state or props)
+                  componentDidUpdate(){
+                    //code
+                  }
+               -> Unmounting Phase (When we leave from a component) (cleanup unwanted data)
+                  componentWillUnmount(){
+                    //code 
+                  }
+              -> In functions components for all phases we have useEffect() hook 
+                 -> mounting 
+                    useEffect(()=>{
+                      //code
+                    },[])
+                 -> updating 
+                    useEffect(()=>{
+                      //code
+                    },[state|prop])
+                 -> unmounting 
+                    useEffect(()=>{
+                      return ()=>{
+                        //code 
+                      }
+                    },[])
+                -> JSON-SERVER : It is an npm module that allows us to create a mock REST API using just a JSON file.(testing all get , post , put , delete operations)
+                  npm i json-server --g 
+                server/products.json 
+                  {
+    "products":[
+        {"id":1,"name":"A","price":4567,"image":"https://picsum.photos/200/300"},
+        {"id":2,"name":"B","price":5567,"image":"https://picsum.photos/200/300"},
+        {"id":3,"name":"C","price":6567,"image":"https://picsum.photos/200/300"},
+        {"id":4,"name":"D","price":7567,"image":"https://picsum.photos/200/300"},
+        {"id":5,"name":"E","price":8567,"image":"https://picsum.photos/200/300"}
+    ]
+}
+   -> How we run json server 
+      -> open server folder in cmd 
+         json-server --watch products.json --port 3001
+         http://localhost:3001/products (url) to consume (get , post , put , delete)
+
+  -> src/services/ProductService.jsx 
+      import axios from 'axios';
+const API_URL="http://localhost:3001/products";
+const getAllProducts=()=>{
+    return axios.get(API_URL);
+}
+const getProductById=(id)=>{
+    return axios.get(`${API_URL}/${id}`)
+}
+const addProduct=(data)=>{
+    return axios.post(API_URL,data)
+}
+const deleteProduct=(id)=>{
+    return axios.delete(`${API_URL}/${id}`)
+}
+const updateProduct=(id,data)=>{
+    return axios.put(`${API_URL}/${id}`,data)
+}
+export {getAllProducts,getProductById,addProduct,deleteProduct,updateProduct};

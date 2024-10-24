@@ -1,0 +1,26 @@
+--> Session 12 
+   -> Performance optimization 
+     -> Error boundaries : they are used to handle errors in react application
+        -> 2 ways to handle errors 
+          1. try/catch block in each component 
+          2. React Error Boundary 
+             npm install react-error-boundary 
+
+        -> Fragments and StrictMode 
+           -> Fragments : return multiple elements , assign multiple elements in a single variable , rendering a list of fragments . It take less memory.It can't create a DOM node.
+             <div>
+                //elements 
+             </div>
+             <> </> : play a role of parent element (wrapper element). It cant take a space.
+            <> </>
+          -> StrictMode : Lets you find common bugs in your components early during development.
+             It helps to identify and detect warnings/errors during the development phase.
+               <React.StrictMode>
+                 ---
+                 --
+               </React.StrictMode>
+			   
+        -> useMemo : it is a hook that lets us cache the result of a calculation between re-renders.It return a memoized value. It only runs when one of its dependencies update.
+         This can improve performance of the application.
+
+        -> useCallback : It return a memoized callback function. the child components will not automatically run on every render without any need. they render only when there is any dependencies of usecallback is updated. 

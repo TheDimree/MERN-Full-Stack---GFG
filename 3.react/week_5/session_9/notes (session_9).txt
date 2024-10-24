@@ -1,0 +1,31 @@
+-> How we use Bootstrap framework in React 
+    -> https://react-bootstrap.github.io/ (for react) 
+    -> https://getbootstrap.com/docs/5.0/getting-started/introduction/
+       npm i bootstrap --save 
+       -> configure bootstrap in index.js 
+         import "bootstrap/dist/css/bootstrap.min.css";
+         import "bootstrap/dist/js/bootstrap.bundle";
+
+      -> components 
+         NavBar 
+         Home 
+         About Us 
+         Gallery 
+         NotFound 
+      -> Routing 
+         npm i react-router-dom --save 	
+		
+
+     -> Http Call or network call (consume API)
+       -> fetch : inbuild method in javascript 
+       -> axios : 3rd party module which is used to consume APIs 
+          npm i axios --save 
+          -> It also returns promise 
+          -> How we use axios 
+            import axios from 'axios';
+              axios.get | post | put | delete(path)
+              .then(res=> res.data)
+              .catch(err=> console.log(err))
+			  
+			  
+	-> Grid System  = 12 Columns
