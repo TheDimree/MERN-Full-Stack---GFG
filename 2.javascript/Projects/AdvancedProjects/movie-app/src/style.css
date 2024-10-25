@@ -31,12 +31,16 @@ body {
     color: var(--text-color-primary);
 }
 
+/* .card-container {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+} */
+
 .card {
     width: 18rem;
     border-radius: 4px;
     background-color: var(--card-bg);
-
-
 }
 
 .card-image-container {
