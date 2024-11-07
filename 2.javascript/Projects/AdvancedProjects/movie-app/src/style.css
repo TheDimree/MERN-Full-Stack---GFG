@@ -24,23 +24,28 @@ body {
 }
 
 .header {
-    padding: 2rem;
+    padding: 2rem 5rem 1rem 6rem;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100vw; 
+    background-color: var(--bg-color);
+
 }
 .heading-1 {
     font-size: 3rem;
     color: var(--text-color-primary);
 }
 
-/* .card-container {
-    display: flex;
-    gap: 3rem;
-    flex-wrap: wrap;
-} */
-
 .card {
     width: 18rem;
     border-radius: 4px;
     background-color: var(--card-bg);
+}
+
+.card:hover {
+    scale:1.1;
+    transition: scale 0.5s;
 }
 
 .card-image-container {
@@ -83,4 +88,31 @@ body {
     display:flex;
     align-items: center;
     gap:4px;
+}
+
+.input {
+    background-color: transparent;
+    border: 2px solid var(--card-bg);
+    border-radius: 4px;
+    padding: 8px;
+    color: var(--text-color-primary);
+    font-size: 1.25rem;
+    width: 25rem;
+}
+
+.search-container {
+    margin-left:auto;
+
+}
+
+.main {
+    padding-top: 10rem;
+}   
+
+.card-container {
+    /* display: flex;
+    gap: 3rem;
+    flex-wrap: wrap; */
+    padding-left: 6rem;
+    padding-right: 4rem;
 }

@@ -1,0 +1,55 @@
+-> Redux : It is a JavaScript library that manages global state and can be used in our application.
+   -> Redux is a state manager that helps us write application that are developed where we can manage the global state.
+   It used a one-way data flow where the UI render based on the state app.
+   In a appliation there is only 1 store where we store our global state and we can access that state anywhere in our application 
+   -> Benefits of redux 
+      -> It can help improve performance of the application.
+      -> It also allows us to connect multiple components so that the components can only extracts the data it needs from the store.
+
+   -> How we use redux in react 
+       -> redux with react-redux (old)
+       -> redux toolkit (new)
+    -> Redux architecture 
+       -> Store : It is a place where the entire global state of the application lists.
+       -> ACTION : are sent or dispatched from the view to reducer to update the state in the store. Actions are plain object with type and payload 
+          {
+            type:'',
+            payload:data
+          }
+       -> REDUCER : It is a pure function .It have 2 parameter state and actions. It get the actions and update the state of the store 
+        
+        
+         -> redux with react-redux 
+            npm i redux react-redux --save 
+            -> redux 
+                -> createStore : to create a store
+                -> combineReducers : combine multiple reducer 
+            -> react-redux 
+               -> Provider : to provide store to the application 
+               -> useDispatch : dispatch actions to update state 
+               -> useSelector : to get state from store 
+
+            -> Working flow 
+               -> store folder 
+                  store.jsx : create store and pass reducer 
+                  counterReducer.jsx : create a reducer with state and actions 
+                  counterAction.jsx : define methods for actions 
+               -> call store in index.js and provide it to entire application 
+                 import store from './store/store';
+                 import {Provider} from 'react-redux';
+                    <Provider store={store}>
+                       <App />
+                     </Provider>
+               -> How we read state in component 
+                  useSelector hook 
+                  import { useDispatch, useSelector } from 'react-redux';
+                  import { DEC, INC, RESET } from '../store/counterActions';
+                  const {count}=useSelector(state=>state);
+                  const dispatch=useDispatch();
+        <button className='btn btn-success' onClick={()=> dispatch(INC(5))}> ++ </button>
+        <button className='btn btn-success' onClick={()=> dispatch(DEC(2))}> -- </button>
+        <button className='btn btn-success' onClick={()=> dispatch(RESET())}> Reset </button>
+
+    -> Redux Toolkit 
+      https://redux-toolkit.js.org/introduction/getting-started 
+      npm install @reduxjs/toolkit react-redux --save 

@@ -1,7 +1,12 @@
-const URL = "https://dummyjson.com/products";
+// const URL = "https://movies-app.prakashsakari.repl.co/api/movies"
+// const URL = "https://dummyjson.com/products";
+const URL = "http://localhost:8008/movies"
 const parentElement = document.querySelector(".main");
 const createElement = (element) => document.createElement(element);
-let movies;
+const searchInput = document.querySelector(".input")
+
+let searchValue ="", movies, filteredArrayOfMovies = [];
+
 const getMovies = async (url) => {
   // * Traditional Way: Fetch method
   // fetch(URL)
@@ -11,9 +16,10 @@ const getMovies = async (url) => {
   // console.log("Hi from getMOvies")
   // * Modern way is more cleaner
   try {
-    const { data } = await axios.get(url);
-    console.log(data.products);
-    createMovieCard(data.products);
+    const response = await axios.get(url);
+    movies = response.data;
+    console.log(movies);
+    createMovieCard(movies);
     // return data.products;
   } catch (error) {
     console.log(error);
@@ -30,7 +36,7 @@ const createMovieCard = (movies) => {
     "grid-cols-1",
     "sm:grid-cols-2",
     "lg:grid-cols-4",
-    "gap-4", "my-2"
+    "gap-6", "my-2"
   );
 
   for (let movie of movies) {
@@ -45,8 +51,8 @@ const createMovieCard = (movies) => {
     // Image element
     const imageElement = createElement("img");
     imageElement.classList.add("card-image");
-    imageElement.setAttribute("src", movie.thumbnail);
-    imageElement.setAttribute("alt", movie.title);
+    imageElement.setAttribute("src", movie.img_link);
+    imageElement.setAttribute("alt", movie.name);
 
     imageContainer.appendChild(imageElement);
     card.appendChild(imageContainer);
@@ -58,13 +64,13 @@ const createMovieCard = (movies) => {
     // Card title
     const titleElement = createElement("p");
     titleElement.classList.add("title");
-    titleElement.innerText = movie.title;
+    titleElement.innerText = movie.name;
     cardDetailsContainer.appendChild(titleElement);
 
     // Card genre
     const genreElement = createElement("p");
     genreElement.classList.add("genre");
-    genreElement.innerText = `Genre: ${movie.category}`;
+    genreElement.innerText = `Genre: ${movie.genre}`;
     cardDetailsContainer.appendChild(genreElement);
 
     // Ratings and length container
@@ -82,15 +88,15 @@ const createMovieCard = (movies) => {
 
     // Rating value
     const ratingValueElement = createElement("span");
-    ratingValueElement.innerText = movie.rating;
+    ratingValueElement.innerText = movie.imdb_rating;
     starRatingContainer.appendChild(ratingValueElement);
 
     ratingsContainer.appendChild(starRatingContainer);
 
-    // Price
-    const priceElement = createElement("span");
-    priceElement.innerText = `${movie.price} USD`;
-    ratingsContainer.appendChild(priceElement);
+    // Duration
+    const durationElement = createElement("span");
+    durationElement.innerText = `${movie.duration} mins`;
+    ratingsContainer.appendChild(durationElement);
 
     cardDetailsContainer.appendChild(ratingsContainer);
     card.appendChild(cardDetailsContainer);
@@ -104,3 +110,21 @@ const createMovieCard = (movies) => {
 (async () => {
   await getMovies(URL);
 })();
+
+
+
+function handleSearch(event) {
+    searchValue = event.target.value.toLowerCase();
+    // console.log(searchValue)
+
+    filteredArrayOfMovies = searchValue?.length > 0 ? movies.filter(movie => (typeof movie.name === 'string' && movie.name.toLowerCase().includes(searchValue)) || (typeof movie.director_name === 'string' && movie.director_name.toLowerCase().includes(searchValue)) || (typeof movie.cast_name === 'string' && movie.cast_name.toLowerCase().includes(searchValue))) : movies;
+    // console.log(filteredArrayOfMovies)
+     
+    parentElement.innerHTML = ""
+    createMovieCard(filteredArrayOfMovies)
+
+}
+
+searchInput.addEventListener("keyup", handleSearch) // check for "change"=> you have to wait and click outside or enter.
+
+// -46:23

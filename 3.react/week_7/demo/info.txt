@@ -1,0 +1,3 @@
+1. react-redux
+2. react-toolkit
+3. Sessions (to strore value after refresh)
