@@ -14,9 +14,26 @@
 <body>
     <header class="header">
         <h1 class="heading-1 ">Movie App</h1>
-        <div class="search-container">
-            <input type="text" class="input" placeholder="search a Movie | Director | Actor">
+        <div class="options flex">
+            <div class="search-container">
+                <input type="text" class="input" placeholder="search a Movie | Director | Actor">
+            </div>
+            <div>
+                <select name="" id="rating-select" class="rating-select">
+                    <option class="option" value="">Rating</option>
+                    <option class="option" value="7">7 & above</option>
+                    <option class="option" value="8">8 & above</option>
+                    <option class="option" value="8.5">8.5 & above</option>
+                    <option class="option" value="9">9 & above</option>
+                </select>
+            </div>
+            <div>
+                <select name="" id="genre-select" class="rating-select">
+                    <option class="option" value="">Genre</option>
+                </select>
+            </div>
         </div>
+
     </header>
     <main class="main">
         <!-- <div class="card-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">

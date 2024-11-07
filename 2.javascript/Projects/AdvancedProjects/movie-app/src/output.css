@@ -593,8 +593,16 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.flex {
+  display: flex;
+}
+
 .grid {
   display: grid;
+}
+
+.contents {
+  display: contents;
 }
 
 .grid-cols-1 {

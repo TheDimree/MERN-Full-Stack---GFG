@@ -100,10 +100,27 @@ body {
     width: 25rem;
 }
 
-.search-container {
-    margin-left:auto;
-
+.rating-select {
+    background-color: transparent;
+    border-radius:4px;
+    padding:8px;
+    font-size:1.25rem;
+    border: 2px solid var(--card-bg);
+    color: var(--text-color-primary)
 }
+
+.option {
+    background-origin: var(--bg-color);
+    color: var(--text-color-primary)
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    margin-left:auto;
+    gap:8px;
+}
+
 
 .main {
     padding-top: 10rem;
