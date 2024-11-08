@@ -1,0 +1,16 @@
+-> Setup Tailwind : https://tailwindcss.com/docs/installation
+
+-> Install : react-router-dom, axios
+
+-> Components: https://uilight.netlify.app/documentation/docs
+
+-> API = https://fakeapi.platzi.com/en/about/introduction/
+
+-> Icons 
+    
+    ->> Paste this link in index.css as index.js import index.css by default:
+    @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+    @import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined");  
+        ->>> [Via https://developers.google.com/fonts/docs/material_icons#icon_font_for_the_web]
+    
+    ->> root website: https://fonts.google.com/icons
