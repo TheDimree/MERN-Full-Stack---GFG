@@ -1,0 +1,13 @@
+-> Using material ui for css: https://mui.com/material-ui/getting-started/installation/
+    -> npm install @mui/material @emotion/react @emotion/styled
+
+-> Other installations:
+    -> Router = npm i react-router-dom
+    -> Redux = npm i react-redux @reduxjs/toolkit
+    -> UUId = nmp i uuid
+    -> AXIOS = npm i axios
+
+=> npm install @mui/material @emotion/react @emotion/styled uuid react-router-dom react-redux  @reduxjs/toolkit axios
+
+-> Run npm list: This will show a tree of all installed packages, including sub-dependencies.
+    -> For a cleaner view, you can use npm list --depth=0 to show only the top-level dependencies you explicitly installed.
