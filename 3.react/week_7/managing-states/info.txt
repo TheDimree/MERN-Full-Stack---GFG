@@ -1,0 +1,5 @@
+-> State management advancements:
+    useState => useReducer => useContext => Redux
+
+-> Installation
+npm i bootstrap react-router-dom react-redux @reduxjs/toolkit

@@ -6,8 +6,9 @@
     -> Redux = npm i react-redux @reduxjs/toolkit
     -> UUId = nmp i uuid
     -> AXIOS = npm i axios
+    -> Json server = npm i json-server
 
-=> npm install @mui/material @emotion/react @emotion/styled uuid react-router-dom react-redux  @reduxjs/toolkit axios
+=> npm install @mui/material @emotion/react @emotion/styled uuid react-router-dom react-redux  @reduxjs/toolkit axios json-server
 
 -> Run npm list: This will show a tree of all installed packages, including sub-dependencies.
     -> For a cleaner view, you can use npm list --depth=0 to show only the top-level dependencies you explicitly installed.
