@@ -1,13 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useMyContext } from './myContext'
 
 const Second = () => {
     const { count, price, setDiscount } = useMyContext();
-    const [myDiscount, setMyDiscount] = useState(0);
-    const handleDiscount = () => {
-        console.log("btn clicked")
-        setDiscount(myDiscount);
-    }
+
     return (
         <div>
             <div className="container my-2">
@@ -21,8 +17,7 @@ const Second = () => {
                 </div>
             </div>
             <div className='container my-2'>
-                <input type="text" name="" id="" onChange={(event) => setMyDiscount(event.target.value)} placeholder="Enter discount" /> <br />
-                <button type="button" className="btn btn-primary my-2" onClick={handleDiscount}>Give Discount</button>
+                <input type="text" name="" id="" onChange={(event) => setDiscount(event.target.value)} placeholder="Enter discount" /> <br />
                 {/* 
                     // * Use onClick={() => handleDiscount()} if you need an anonymous function or want to pass arguments.
                     // * Use onClick={handleDiscount} for direct, clean function calls without arguments.

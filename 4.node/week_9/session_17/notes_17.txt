@@ -1,0 +1,46 @@
+-> Node Js : It is an open-source , cross-platform runtime environment which execute JavaScript code outside the browser (server side , backend)
+   -> We can interect with database , perform file system operations and all backend operations.
+   -> It is not a langauge or a framework 
+   -> Here we write everything in JavaScript.
+   -> With the help of Node Js we can develop 
+      -> Dynamic Web Applications 
+      -> REST API's 
+      -> Network based applications 
+   -> Node js installation 
+      -> Download and install node js 
+        https://nodejs.org/en/download/package-manager
+      -> ** when we install node , npm is also installed with it 
+        -> npm : node package manager (3rd party modules)
+        -> to check node and npm is install or not 
+           node -v 
+           npm -v 
+     -> How we run node js program 
+         first.js 
+         console.log("First node app");
+
+         node first.js 
+    -> Node js by default asynchronous(non-blocking) in nature 
+    -> Node Js is Single threaded 
+ -> Node process model 
+    -> Single-threaded event loop 
+       Node runs on a single thread , means each request is processed on a single thread.
+    -> Non-blocking : It used non-blocking codes, which are asynchronous and accept callback functions.This means that the main thread does'nt have to wait for the background thread to complete asynchronous i/o operations 
+    -> Event Loop : Node used event loop to listen for events and receive requests from event queue.Event loop is continuosly runs.
+
+    -> Modules : are the libraries in which we have a functionalities and we can use these functionalities anywhere we need 
+       -> import and export 
+       -> import : when we want to used some functionalities from the module 
+       -> export : when we define the functionalities in the module so anyone import it 
+      -> Types of modules 
+         -> User Define Module (custum)
+         -> Inbuild module (core) (http , fs , events , path , os etc)
+         -> Third party module (npm)
+
+      -> How we create user define module (new JS (es6))
+      -> Core Module 
+         -> http module : create a server
+      -> nodemon : 3rd party package for developers . It work on projects , when any changes are occur it restart the server
+         npm i nodemon --g 
+         nodemon first.js 
+     -> fs module : file system or file handling module (file folder operations) 
+     -> events module : to perform custom events with the help of EventEmitter class 

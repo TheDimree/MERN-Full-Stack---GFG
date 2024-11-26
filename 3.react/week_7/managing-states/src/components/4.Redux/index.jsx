@@ -1,3 +1,4 @@
+// download redux devtools extension on chrome.
 import { Counter } from "./Counter"
 import First from "./First"
 
@@ -8,7 +9,10 @@ export const ReduxLibrary = () => {
             <Counter />
             <hr />
             <First />
-
+            <div className="my-2 container">
+                <p>Problem: Solved all problems but can't handle asynchronous operations i.e. delayed works. Eg: calling an api.</p>
+                <p>Solution: Async Thunk Redux</p>
+            </div>
         </div>
         
     )

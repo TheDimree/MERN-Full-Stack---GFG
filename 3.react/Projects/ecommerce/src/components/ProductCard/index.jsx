@@ -1,5 +1,27 @@
+import { useState, useEffect } from "react";
+import { useCart } from "../../context/cart-context";
+import { FindProductInCart } from "../../utils/FindProductInCart";
 export const ProductCard = ({ product }) => {
     const imageUrl = product.images[0].replace(/[\[\]"]+/g, '');
+
+    const { cart, cartDispatch } = useCart();
+
+    const isProductInCart = FindProductInCart(cart, product.id);
+    console.log("checking: ", isProductInCart)
+    
+    const onCartClick = (product) => {
+        
+        !isProductInCart ?
+            cartDispatch({
+            type: 'ADD_TO_CART',
+            payload: { product }
+            }) : 
+            cartDispatch({
+            type: 'REMOVE_FROM_CART',
+            payload: { id: product.id }
+        })
+    }
+
     return (
         <>
             <div className="card card-vertical d-flex direction-column relative shadow">
@@ -23,11 +45,15 @@ export const ProductCard = ({ product }) => {
                             </span>
                             Add To Whishlist
                         </button>
-                        <button className="button btn-primary btn-icon cart-btn d-flex                          align-center justify-center gap cursor btn-margin">
+                        <button onClick={() => onCartClick(product)} className="button btn-primary btn-icon cart-btn d-flex                          align-center justify-center gap cursor btn-margin">
                             <span className="material-icons-outlined">
-                                shopping_cart
+                                {
+                                    isProductInCart ? 'shopping_cart_checkout' : 'shopping_cart'
+                                }                                
                             </span>
-                            Add To Cart
+                            {
+                                isProductInCart ? 'Go to Cart' : 'Add to Cart'
+                            }
                         </button>
                     </div>
                 </div>

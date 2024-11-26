@@ -23,6 +23,5 @@ export const UseState = () => {
                 <p>Solution: useReducer Hook</p>
             </div>
         </>
-
     )
 }

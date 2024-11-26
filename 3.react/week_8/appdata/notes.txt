@@ -1,0 +1,6 @@
+-> Project Setup 
+   npx create-react-app shoppingapp 
+     -> install bootstrap , router , axios , redux etc 
+       npm i bootstrap react-router-dom axios @reduxjs/toolkit react-redux --save 
+
+       https://dummyjson.com/docs/products

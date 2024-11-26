@@ -17,6 +17,7 @@ export default function App() {
         <Route path='/use-reducer' element={<UseReducer />}/>
         <Route path='/use-context' element={<UseContext />}/>
         <Route path='/redux' element={<ReduxLibrary />}/>
+        <Route path='/async-thunk' element={<ReduxLibrary />}/>
 
       </Routes>
     </>
