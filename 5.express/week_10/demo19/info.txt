@@ -24,4 +24,10 @@
 -> JWT
     Link: https://www.digitalocean.com/community/tutorials/nodejs-jwt-expressjs
     npm i jsonwebtoken
+
+-> Got this token after signin:
+    POST = http://localhost:8008/api/auth/signin
+    Created Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRpbXJpQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiZGltcmkiLCJpYXQiOjE3MzMwNDc5MjUsImV4cCI6MTczMzA1MTUyNX0.9mS5KPsLirp85h0CowA3ammVnc1QYLMyfjARR3v6b9A
     
+-> Password Encryption and Hashing
+    npm i bcrypt
