@@ -1,0 +1,9 @@
+1. Original Git address: https://github.com/GeeksforgeeksDS/javascript-basic-to-advanced/tree/main/Module.%2015b%20-%20Project%20recipe-app
+
+2. Type module for import and export : <script type="module" src="index.js"></script>
+
+2. Axios = <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+3. API: https://www.themealdb.com/api.php
+
+-1:1:12

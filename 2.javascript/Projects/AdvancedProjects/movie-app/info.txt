@@ -1,4 +1,0 @@
--> Run these following commands on the terminals:
-    1.) json server in server folder = json-server --watch movies.json --port 8008
-    2.) tailwind = npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
-

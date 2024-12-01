@@ -1,0 +1,10 @@
+import express from 'express';
+import { addProducts, deleteProduct, getAllProducts, getProductById, updateProduct } from '../controllers/ProductController.js';
+import jwtAuthorization from '../middleware/jwtAuthorize.js';
+const router=express.Router();
+router.get("/getallproducts",getAllProducts);
+router.get("/getproductbyid/:id",getProductById);
+router.post("/addproduct",jwtAuthorization,addProducts);
+router.delete("/deleteproduct/:id",jwtAuthorization,deleteProduct);
+router.put("/updateproduct/:id",jwtAuthorization,updateProduct);
+export default router;

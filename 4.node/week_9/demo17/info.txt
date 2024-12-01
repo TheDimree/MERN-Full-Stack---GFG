@@ -1,0 +1,7 @@
+-> run node file: 
+    -> open particular folder
+    -> run command: node name.js
+
+-> install nodemon package (it is only for developers to automatically restart server)
+    -> npm i nodemon --g
+    -> use this command to run: nodemon name.js

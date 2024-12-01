@@ -1,0 +1,29 @@
+-> npm init -y = package.json will be created to store dependencies add their type.
+
+-> Add "type": "module" in package.json to use ES6 import, export style
+    {
+    "name": "demo18",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+    }
+
+    Note: You can also create your own scripts in package.json like => "start": "nodemon index.js"
+
+-> install Express
+    ->npm i express (creates node_moudules folder)
+
+Note: npm install (also creates node_moudules folder)
+
+-> Running node app
+    -> npm start    (as we have added our start script in package.json)
+
+-> Middlewares
+    -> use() method is used for using middlewares.

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Recipe App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="heading-1">
+            <a href="/">Recipe App</a>
+        </h1>
+        <div class="search-container">
+            <input type="text" class="input" placeholder="Search for recipes...">
+        </div>
+    </header>
+    <div class="main-container d-flex gap-lg">
+        <aside class="cusine-filter d-flex d-flex-direction-column"></aside>
+        <main class="main d-flex wrap-items"></main>
+    </div>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <!-- It must be the before index.js so we can use it. -->
+    <script type="module" src="index.js"></script>
+
+</body>
+</html>

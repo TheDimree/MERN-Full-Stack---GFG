@@ -6,7 +6,7 @@ import { UseState } from './components/1.UseState'
 import {UseReducer} from './components/2.UseReducer'
 import { UseContext } from './components/3.UseContext'
 import { ReduxLibrary } from './components/4.Redux'
-
+ import ReduxAsync from './components/5.async-thunk-redux/ReduxAsync'
 export default function App() {
   return (
     <>
@@ -17,7 +17,7 @@ export default function App() {
         <Route path='/use-reducer' element={<UseReducer />}/>
         <Route path='/use-context' element={<UseContext />}/>
         <Route path='/redux' element={<ReduxLibrary />}/>
-        <Route path='/async-thunk' element={<ReduxLibrary />}/>
+        <Route path='/async-thunk' element={<ReduxAsync />}/>
 
       </Routes>
     </>

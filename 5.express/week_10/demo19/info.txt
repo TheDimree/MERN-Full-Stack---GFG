@@ -1,0 +1,27 @@
+-> Getting started:
+    npm init -y
+    npm i express
+    npm i -g nodemon
+
+-> add in package.json
+    {
+        "type": "module"
+        ...
+        "scripts": {
+            "start": "npdemon index.js"
+        }
+    }
+
+-> Pass this json object in thunder POST body
+{
+  "email": "dimri@gmail.com",
+  "password": "dimri"
+}
+
+-> .env file:
+    npm i dotenv
+
+-> JWT
+    Link: https://www.digitalocean.com/community/tutorials/nodejs-jwt-expressjs
+    npm i jsonwebtoken
+    

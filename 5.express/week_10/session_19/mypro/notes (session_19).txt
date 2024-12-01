@@ -1,0 +1,41 @@
+-> MVC architecture : MVC is a architecture or a design pattern , where we can put our code into 3 major layers 
+   -> Model : Data access layer 
+       -> represent a database 
+       -> in model we define schema and model of our database 
+          -> schema : structure of the model (table)
+          -> model : table or collection
+   -> View : Presentation layer (UI) (React)
+   -> Controller : Control logic layer : in that we define all methods where we put our business logics
+
+   -> Auth Module 
+      -> sigin and signup api 
+         -> AuthModel.js 
+         -> AuthController.js 
+         -> AuthRoutes.js
+
+  -> .env file : where we put our global variables so we can access these variables anywhere and the benefit is that we can create env file for different - different environments like uat , production , qa etc
+    npm i dotenv --save  
+    import { configDotenv } from 'dotenv';
+configDotenv({
+    path:'./.env'
+})
+  -> to access variables 
+    process.env.VARIABLENAME 
+
+-> Authentication and Authorization 
+   These are essential process for securing information and systems.
+   Authentication verifies a user's indentity , while authorization determines what resources thet can access and how much access they have.
+    -> To acheive it we have JWT or oAuth etc 
+  -> JWT Authentication (JSON Web Token)
+      -> when user is authenticate means when a email and password is correct then we create a JWT token and send token through the response.
+         -> token have 3 things 
+            1.Data 
+            2.Client secret (imp)
+            3.Expiration time 
+        *** In every request the token is new () 
+        npm install jsonwebtoken 
+    -> we need a products module 
+        ProductRoute 
+        ProductController 
+        ProductModel 
+        eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiY0BnbWFpbC5jb20iLCJpYXQiOjE3MzI0NDI5MDUsImV4cCI6MTczMjQ0NjUwNX0.s1BKklEIq6Bx43H-4ryINg01Xrjk8XHhnX_9a1KoDbg
