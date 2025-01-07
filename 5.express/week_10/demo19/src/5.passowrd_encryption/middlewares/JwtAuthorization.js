@@ -10,7 +10,6 @@ const JwtAuthorizationMiddleware = (req, res, next) => {
 
     jwt.verify(token, process.env.TOKEN_SECRET, (err, user) => {
         if (err) {
-            // const errorMessage = err.name === "TokenExpiredError" ? "Token has expired" : "Token is invalid";
             return res.status(401).json({ "err": 1, "msg": err });
         }
         req.user = user; // Attach the decoded user to the request object

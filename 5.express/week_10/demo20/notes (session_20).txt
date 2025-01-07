@@ -1,0 +1,21 @@
+-> API Design and Documentation
+    -> Designing scalable and maintainable APIs
+        -> When we create APIs it requires architecture, modular code organization, error management and deployment. So that apis can handle large scale traffics etc.
+        -> Directory Structure
+            index.js = It will serve as a entry point for our API.
+
+            npm install dotenv from "dotenv"
+
+        -> How do we get POST data:
+            We need to call in-build middleware express.json() = app.use(express.json())
+            accessing: req.body
+
+        -> How do we access params:
+            req.params
+
+-> Server-side validations (input validation and saniization)
+    -> Validator
+        -> express-validator // https://express-validator.github.io/docs
+            -> npm install express-validator
+    -> Sanitizer
+    -> Validation chain

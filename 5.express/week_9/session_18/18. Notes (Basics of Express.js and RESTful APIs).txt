@@ -1,0 +1,81 @@
+--> Express Js : It is an node js web framework. It provides a robust set of features for web application and mobile applications.
+  -> Within express we can develop APIs very quick and easy.
+  -> Due to javascript the performance is very fast 
+  -> Here we have a concept of middleware so with the help of it we can apply many features like routing , authentication , authorization etc.
+
+   ** We also develop a whole dynamic web application in express js with the help of template engines like ejs , pug , handlebar js etc.
+
+   -> How we work on express js 
+      -> We need to create express application (installation)
+         -> create a project folder 
+           -> open folder in cmd or terminal 
+               npm init -y (package.json)
+               and put 
+                "type": "module", in the file 
+            -> install express 
+              npm i express --save 
+            -> to activate npm start commond to run application in package.json file put 
+            "scripts": {
+                    "start":"nodemon index.js"
+                 },
+
+      -> Routing : It is a process of specifying how an application replies to a client request to a specific endpoint or URL.When a request URL is match with the route path , then a handler function is execute with the help of route handler.
+         syntax :
+           app.METHOD(url,handler)
+              -> app : instance of express 
+              -> METHOD : http method like GET , POST , PUT , DELETE 
+              -> url : path or endpoint 
+              -> handler : method which execute when a path is match with the request URL
+              eg:
+            app.get("/",(req,res)=>{
+                res.send("response data");
+            })
+        -> How we test the apis 
+           -> postman 
+           -> VSCODE we have thundeclient extension 
+
+    -> parameters in routing (route params): they are named URL segments that are used to capture the value from the URL. The captured value are populated in the req.params object with the name of the route parameter.
+       http://localhost:9999/category/mens 
+
+       app.get("/category/:cat",(req,res)=>{
+          let catname=req.params.cat;
+          res.send(`${catname} products`);
+       })
+    //optional parameter (?)
+       app.get("/categoryproduct/:cat/:scat?",(req,res)=>{
+          let catname=req.params.cat;
+          let scatname=req.params.scat;
+          if(scatname!=undefined){
+             res.send(`${catname} and ${scatname} products`);
+          }
+          else{
+             res.send(`${catname} products`);
+          }
+       })
+
+       -> *** express.Router (inbuild middleware) : with the help of it we can seperate our routes in a diffrent different files and call in main index file. SO that the code is more clear and easy to understand.
+
+       -> ** Middleware : It is a request handler that allows us to intercept and manipulate req and res before they reach to the route handler.They are the functions that are invoked by routing layer.
+          It is a flexible that helps add functionalities like authentication , authorization , error handling , logging etc.
+          -> Types of middleware 
+             1. User Defined 
+             2. Inbuild (express.Router , express.JSON , express.static etc)
+             3. 3rd party middleware :(download and install through npm (multer))
+
+             -> to use a middleware at global label we have a .use() method 
+              app.use(middleware) : global 
+            -> we can call route label middleware 
+        -> User Defined Middleware 
+           -> global middleware 
+           -> route level middleware
+
+        -> Not found route 
+          at the end of main file 
+            app.use((req,res,next)=>{
+               res.send("No route is found");
+            })
+        -> Read post request data in express js 
+           req.body : we can get the data , but before it in main file we need to call a inbuild middleware express.JSON()
+           eg:
+            app.use(express.json());
+          

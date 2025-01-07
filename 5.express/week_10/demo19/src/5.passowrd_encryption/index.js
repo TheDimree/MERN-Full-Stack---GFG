@@ -6,8 +6,8 @@ import ProductRoutes from "./routes/ProductsRoutes.js";
 import { configDotenv } from "dotenv";
 configDotenv ({ path: '../../.env'})
 const PORT = process.env.PORT || 8080;
+// const TOKEN_SECRET = process.env.TOKEN_SECRET;
 
-const TOKEN_SECRET = process.env.TOKEN_SECRET;
 const app = express();
 app.use(express.json());    // used to parse body data in json  format
 

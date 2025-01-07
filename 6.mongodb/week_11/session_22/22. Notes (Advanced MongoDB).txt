@@ -1,0 +1,118 @@
+--> Data Relationships in Mongoose  
+   -> We can define relationship in different ways 
+      1.Embedding documents : Storing related data directly inside a document 
+         One-to-few relationship 
+         eg:
+         const mySchema=new mongoose.Schema({
+            title:{type:String,required:true},
+            body:{type:String,required:true},
+            comments:[
+                {
+                    user:{type:String,required:true},
+                    comment:{type:String,required:true},
+                    postedAt:{type:Date,default:Data.now}
+                }
+            ]
+         })
+
+         2. (*) Referencing Documents 
+           Storing related data in seperate collections and linking them with references (ObjectId) (one-to-many or many-to-many relationships)
+           eg:
+           const autherSchema=new mongoose.Schema({
+              name:String,
+              bio"String
+           })
+           const bookSchema=new mongoose.Schema({
+              title:String,
+              author:{type:mongoose.Schema.Types.ObjectId, ref:'Author'}
+           })
+           const Author=mongoose.model('Author',autherSchema)
+           const Book=mongoose.model('Book',bookSchema)
+
+           -> To fetch 
+              let books=await Book.find().populate('author').exec();
+
+    -> Aggregation framework and Index : these are essential tools for optimizing database queries and performning advance data manipulation.
+       -> Aggregation framework 
+            It's provides a way to process and transform data using a pipline of operations .
+            -> aggregate() method 
+        eg:
+           const orderSchema=new mongoose.Schema({
+               name:string,
+               amount:number,
+               items:[String],
+               createdAt:{
+                type:Date,
+                default:Data.now
+               }
+           })
+           const Order=mongoose.model('Order',orderSchema);
+           const myData=async ()=>{
+              const result=await Order.aggregate([
+                  {$match :{ amount: {$gt:150}}},
+                  {$group :{_id:"$name",totalAmount :{$sum:"$amount"}}},
+                  {$sort :{totalAmount:-1}}
+              ])
+           }
+    -> Indexing 
+       It improves query performance . It support schema-based indexing.
+         eg:
+            const userSchema=new mongoose.Schema({
+                 name: {type:String, required:true},
+                 emial :{type:String,unique:true},
+                 age:{type:Number,required:true}
+            })
+            userSchema.index({age:1});//single-field index (ascending)
+            userSchema.index({name:1,age:-1});//component index
+            const User=mongoose.model('User',userSchema);
+
+            User.createIndexes();
+            db.collection.getIndexes()
+
+-> Performance Optimization
+
+        -> .lean() method return a plain javascript object insted of a mongod documents.
+              const users=await user.find().lean();
+        -> Indexes for efficient quires 
+        -> Pagination 
+           .limit() and .skip()
+        -> Projection to limit return fields 
+          const user= await User.findById(userID,'name email');
+        -> User query caching (if applicable) library redis 
+        -> connection pooling : multiple concurrent requests efficiently 
+            mongoose.connect(uri,{poolSize:10})
+
+
+     -> Data Validation 
+        -> Inbuilt Validators : required , min , max , enum , match etc 
+            age:{ type:Number , min:18, max:60}
+            email :{ type:String, match:/.+\@.+\..+/}
+         -> custom validator 
+           email:{
+              type:String,
+              validate:{
+                  validator:function(v){
+                    return /^[a-zA-Z_]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/.test(v)
+                  },
+                  message:props=> 'Enter valid email address'
+              }
+           },
+           price:{
+              type:Number,
+              required:true,
+              validate:{
+                 validator:(value)=> value>0,
+                 messsage:'Price must be positive'
+              }
+           }
+        -> user external library (joi or Yup) 
+        https://www.bacancytechnology.com/blog/joi-validation-in-nodejs-and-express 
+
+        -> error handling 
+          try{
+
+          }
+          catch(err){
+            
+          }
+             

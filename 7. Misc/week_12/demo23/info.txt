@@ -1,0 +1,14 @@
+-> Installations:
+    npm init -y
+    npm i express mongoose nodemon dotenv jsonwebtoken bcryptjs
+
+-> Edits in package.json:
+    "type": "moduele",  // above scritps
+    "start": "nodemon index.js" // in the scripts object
+	
+	or replace script by this: 
+		"type": "module",
+		"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "nodemon index.js"
+		},

@@ -1,0 +1,11 @@
+-> Authentication and Authorization 
+  -> Authentication 
+      It is the process of verifying the identity of a user.
+        -> Common methods 
+           -> Session-based authentication (server)
+           -> Token-based authentication (token)
+
+  -> Authorization : is the process of determining what a use is allowed to do after they are aunthenticated.(role based)
+
+    -> JWT (JSON Web Token)
+       npm i jsonwebtoken bcryptjs --save

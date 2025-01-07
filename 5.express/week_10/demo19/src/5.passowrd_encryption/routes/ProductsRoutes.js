@@ -6,10 +6,10 @@ import JwtAuthorizationMiddleware from '../middlewares/JwtAuthorization.js';
 const router = express.Router();
 
 // * Using our JWT Middleware at router level.
-router.get('/getAllProducts', getAllProducts)
-router.get('/getProductById/:id', getProductById)
-router.post('/addProduct', JwtAuthorizationMiddleware, addProduct)
-router.delete('/deleteProduct/:id', JwtAuthorizationMiddleware, deleteProduct)
-router.put('/updateProduct/:id', JwtAuthorizationMiddleware, updateProduct)
+router.get('/getallproducts', getAllProducts)
+router.get('/getproductbyid/:id', getProductById)
+router.post('/addproduct', JwtAuthorizationMiddleware, addProduct)
+router.delete('/deleteproduct/:id', JwtAuthorizationMiddleware, deleteProduct)
+router.put('/updateproduct/:id', JwtAuthorizationMiddleware, updateProduct)
 
 export default router;

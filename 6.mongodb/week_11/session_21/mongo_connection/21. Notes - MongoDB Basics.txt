@@ -1,0 +1,46 @@
+-> MongoDB : NoSql database. It is a document database where the data is store in key value pair.
+  -> MongoDb is schema less.
+  -> Download 
+    https://www.mongodb.com/try/download/community
+    -> when we download it mongodb compass is also installed , it is a GUI. 
+      mongodb://localhost:27017 
+        -> default port of mongodb is 27017 
+    -> in mongodb 
+      table is known as collection 
+      row is known as document 
+      column is known as field 
+      -> mongosh is for cmd 
+         -> show dbs; // display all db names 
+         -> use databasename; //create a database , if exists use it 
+         -> db ;// current database name 
+        -> create collection and insert document 
+          db.collectionname.insert({'name':'anuj',age:23});
+          ** when a document is created in mongodb it automatically create a unique field _id with a unique id 
+
+    -> How we connect mongodb to express js 
+       -> mongoose module | library 
+         https://mongoosejs.com/docs/7.x/docs/index.html 
+         -> Mongoose is a library which is used to connect with mongodb to perform operations . 
+           -> It used ODM (Object Data Mapping) approach where it provide us the schema and model approach 
+              -> schema : structure of the collection 
+              -> model :  represent a collection 
+            npm install mongoose --save 
+         -> Database connection 
+           eg:
+            import mongoose from "mongoose";
+const CONNECTION_STRING="mongodb://localhost:27017/geekbatch54";
+const db_connection=async()=>{
+  try{
+       await mongoose.connect(CONNECTION_STRING);
+       console.log("MongoDB Connected");
+  }
+  catch(err){
+      console.log(`MongoDB connection error`);
+  }
+}
+export {db_connection};
+  -> Model and schema 
+
+-> MongoDB atlas : cloud database service provider 
+  The free tier of MongoDB Atlas offers up to 512 MB of storage:
+  M0: The free tier's M0 cluster has a maximum storage capacity of 512 MB.

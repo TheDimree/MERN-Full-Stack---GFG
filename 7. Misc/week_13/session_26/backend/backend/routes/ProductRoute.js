@@ -1,0 +1,10 @@
+import express from 'express';
+import { addproduct, deleteproduct, getAll, getById, updateproduct } from '../controllers/ProductsController.js';
+import upload from '../middleware/upload.js';
+const router=express();
+router.get('/getallproducts',getAll);
+router.get('/byid:id',getById);
+router.post('/add',upload.single('att'),addproduct);
+router.delete('/delete/:id',deleteproduct);
+router.put('/edit/:id',updateproduct);
+export default router;

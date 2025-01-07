@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Media Queries Example</title>
+    <style>
+      /* Styles for desktop screens */
+      .some-element {
+        width: 300px;
+        height: 200px;
+        background-color: rgb(136, 136, 236);
+      }
+
+      /* Media query for tablets */
+      @media screen and (max-width: 1024px) {
+        .some-element {
+          width: 200px;
+          height: 150px;
+          background-color: rgb(126, 234, 126);
+        }
+      }
+
+      /* Media query for mobile screens */
+      @media screen and (max-width: 768px) {
+        .some-element {
+          width: 150px;
+          height: 100px;
+          background-color: rgb(234, 99, 99);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="some-element"></div>
+  </body>
+</html>

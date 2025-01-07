@@ -1,0 +1,17 @@
+-> Installations:
+    npm init -y
+    npm i express mongoose nodemon dotenv
+
+-> Edits in package.json:
+    "type": "moduele",  // above scritps
+    "start": "nodemon index.js" // in the scripts object
+
+-> ask this error: 
+Failed to retrieve server info
+
+MongoPoolClearedError: Connection pool for localhost:27017 was cleared because another operation failed with: "connect ETIMEDOUT 127.0.0.1:27017, connect ECONNREFUSED ::1:27017"
+
+Ralationships:
+1-1 : One author with book.
+1-N : One author can write multiple books.
+N-N : A Book can be written by multiple Authors + An Author can write multiple Books = Multiple Authors & Multiple Books.

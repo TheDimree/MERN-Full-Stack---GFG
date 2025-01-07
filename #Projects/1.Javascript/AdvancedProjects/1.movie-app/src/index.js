@@ -190,7 +190,7 @@ function handleSearch(event) {
 function debounce(callback, delay) {
   let timerId;
 
-  return (...args) => {
+  return (...args) => { // ...args is a rest parameter; It collects all arguments in an args array.
     clearTimeout(timerId);
     timerId = setTimeout(() => {
       callback(...args);
